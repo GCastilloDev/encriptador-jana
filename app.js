@@ -4,6 +4,7 @@ const app = Vue.createApp({
   // <p>Desde app.js</p>
   // <pre>{{ {a: 1, b: 2} }}</pre>
   // `
+  mounted() {},
   data: () => ({
     texto: '',
     textoEncriptado: '',
@@ -144,6 +145,12 @@ const app = Vue.createApp({
       });
 
       this.textoEncriptado = fraseEncriptada;
+    },
+    copyText() {
+      const toastCopied = this.$refs.toastCopied;
+      const toast = new bootstrap.Toast(toastCopied);
+      navigator.clipboard.writeText(this.textoEncriptado);
+      toast.show();
     },
   },
   watch: {

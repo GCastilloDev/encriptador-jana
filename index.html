@@ -26,8 +26,33 @@
     <script src="app.js" defer></script>
   </head>
 
-  <body class="vh-100 d-flex justify-content-center align-items-center">
-    <div id="myApp" class="card">
+  <body
+    id="myApp"
+    class="vh-100 d-flex justify-content-center align-items-center"
+  >
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+      <div
+        ref="toastCopied"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          <strong class="me-auto">Texto encriptado</strong>
+          <small>1 min ago</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">Copiado exitosamente.</div>
+      </div>
+    </div>
+
+    <div class="card">
       <div class="card-body">
         <h1 class="text-center mb-5">SUSTITUCIÓN POLIALFABÉTICA</h1>
         <div class="mb-3">
@@ -35,7 +60,7 @@
             >Texto a encriptar</label
           >
           <textarea
-            v-model="texto"
+            v-model.trim="texto"
             class="form-control"
             placeholder="Ingresa el texto que deseas encriptar"
             id="exampleFormControlTextarea1"
@@ -56,10 +81,26 @@
             :value="textoEncriptado"
           ></textarea>
         </div>
-        <div class="d-grid gap-2">
-          <button class="btn btn--clear" type="button" @click="texto = ''">
-            Borrar texto
-          </button>
+        <div class="row">
+          <div class="col-6">
+            <div class="d-grid gap-2">
+              <button class="btn btn--clear" type="button" @click="texto = ''">
+                Borrar texto
+              </button>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-grid gap-2">
+              <button
+                class="btn btn--clear"
+                type="button"
+                @click="copyText"
+                :disabled="textoEncriptado == ''"
+              >
+                Copiar texto encriptado
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
