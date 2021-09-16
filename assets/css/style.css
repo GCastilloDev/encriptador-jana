@@ -1,0 +1,37 @@
+body {
+  background: rgb(43, 13, 65);
+  background: linear-gradient(
+    121deg,
+    rgba(43, 13, 65, 1) 0%,
+    rgba(114, 17, 98, 1) 100%
+  );
+}
+
+.form-control {
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: rgba(43, 13, 65, 1);
+  outline: 0;
+  -webkit-box-shadow: 0 0 3px rgba(43, 13, 65, 0.75),
+    0 0 18px rgba(114, 17, 98, 0.6);
+  box-shadow: 0 0 3px rgba(43, 13, 65, 0.75), 0 0 18px rgba(114, 17, 98, 0.6);
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: rgba(114, 17, 98, 0.3);
+  color: #000000;
+}
+
+.btn--clear {
+  background-color: rgb(43, 13, 65);
+  color: #ffff;
+}
+
+.btn--clear:hover {
+  background-color: rgb(114, 17, 98);
+  color: #ffff;
+}
