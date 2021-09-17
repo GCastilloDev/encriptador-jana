@@ -68,7 +68,7 @@
           ></textarea>
         </div>
 
-        <div class="mb-5">
+        <div class="mb-5" v-if="mostrarEncriptado">
           <label for="exampleFormControlTextarea1" class="form-label"
             >Texto encriptado</label
           >
@@ -81,26 +81,10 @@
             :value="textoEncriptado"
           ></textarea>
         </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="d-grid gap-2">
-              <button class="btn btn--clear" type="button" @click="texto = ''">
-                Borrar texto
-              </button>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="d-grid gap-2">
-              <button
-                class="btn btn--clear"
-                type="button"
-                @click="copyText"
-                :disabled="textoEncriptado == ''"
-              >
-                Copiar texto encriptado
-              </button>
-            </div>
-          </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn--clear" type="button" @click="encriptarFrase">
+            Encriptar texto
+          </button>
         </div>
       </div>
     </div>

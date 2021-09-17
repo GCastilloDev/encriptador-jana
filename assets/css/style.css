@@ -1,9 +1,9 @@
 body {
-  background: rgb(43, 13, 65);
+  background: rgb(12, 166, 141);
   background: linear-gradient(
-    121deg,
-    rgba(43, 13, 65, 1) 0%,
-    rgba(114, 17, 98, 1) 100%
+    0deg,
+    rgba(12, 166, 141, 1) 5%,
+    rgba(12, 91, 166, 1) 100%
   );
 }
 
@@ -12,26 +12,26 @@ body {
 }
 
 .form-control:focus {
-  border-color: rgba(43, 13, 65, 1);
+  border-color: rgba(12, 91, 166, 1);
   outline: 0;
-  -webkit-box-shadow: 0 0 3px rgba(43, 13, 65, 0.75),
-    0 0 18px rgba(114, 17, 98, 0.6);
-  box-shadow: 0 0 3px rgba(43, 13, 65, 0.75), 0 0 18px rgba(114, 17, 98, 0.6);
+  -webkit-box-shadow: 0 0 3px rgba(12, 91, 166, 0.75),
+    0 0 18px rgba(12, 166, 141, 0.6);
+  box-shadow: 0 0 3px rgba(12, 91, 166, 0.75), 0 0 18px rgba(12, 166, 141, 0.6);
 }
 
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: rgba(114, 17, 98, 0.3);
+  background-color: rgba(12, 166, 141, 0.3);
   color: #000000;
 }
 
 .btn--clear {
-  background-color: rgb(43, 13, 65);
+  background-color: rgb(12, 166, 141);
   color: #ffff;
 }
 
 .btn--clear:hover {
-  background-color: rgb(114, 17, 98);
+  background-color: rgb(12, 91, 166);
   color: #ffff;
 }

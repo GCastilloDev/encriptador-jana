@@ -8,6 +8,7 @@ const app = Vue.createApp({
   data: () => ({
     texto: '',
     textoEncriptado: '',
+    mostrarEncriptado: false,
     alfabetoImpar: {
       A: 'A',
       a: 'a',
@@ -122,9 +123,9 @@ const app = Vue.createApp({
     },
   }),
   methods: {
-    encriptarFrase(frase) {
+    encriptarFrase() {
       // const frase = 'tecnologias de la información y comunicacion';
-      const fraseLimpia = frase
+      const fraseLimpia = this.texto
         .normalize('NFD')
         .replace(
           /([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,
@@ -145,17 +146,13 @@ const app = Vue.createApp({
       });
 
       this.textoEncriptado = fraseEncriptada;
+      this.mostrarEncriptado = true;
     },
     copyText() {
       const toastCopied = this.$refs.toastCopied;
       const toast = new bootstrap.Toast(toastCopied);
       navigator.clipboard.writeText(this.textoEncriptado);
       toast.show();
-    },
-  },
-  watch: {
-    texto: function () {
-      this.encriptarFrase(this.texto);
     },
   },
 });
